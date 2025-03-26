@@ -19,7 +19,7 @@ A CLI tool to generate NestJS modules, controllers, services, and other componen
 
 ---
 
-## How it works {#howitworks}
+## How it works
 
 How Nest-Combo Works with NestJS CLI
 
