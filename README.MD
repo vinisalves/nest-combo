@@ -8,7 +8,7 @@ A CLI tool to generate NestJS modules, controllers, services, and other componen
 
 ## Table of Contents
 
-- [How it works](#howitworks)
+- [How it works](#how-it-works)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
