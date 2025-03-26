@@ -1,0 +1,30 @@
+{
+  "name": "nest-combo",
+  "version": "1.0.0",
+  "main": "lib/generate.js",
+  "description": "A CLI tool to generate NestJS modules, controllers, and services, etc in horizontal.",
+  "type": "module",
+  "bin": {
+    "nest-combo": "bin/cli.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nestjs",
+    "cli",
+    "generator",
+    "module",
+    "controller",
+    "service"
+  ],
+  "author": "ViniBr",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/cli": "^11.0.5",
+    "chalk": "^5.4.1"
+  }
+}
