@@ -26,7 +26,7 @@ How Nest-Combo Works with NestJS CLI
 If you have the NestJS CLI installed globally , nest-combo will automatically detect and use it to execute commands. This ensures compatibility with your existing global setup.
 
 If the NestJS CLI is not installed globally, don't worry! nest-combo comes bundled with its own local version of the NestJS CLI. It will seamlessly fall back to this cached version to ensure smooth operation without requiring any additional setup from you.
-WIth Nest-Combo you will be able to speed you developmento process with single line commands.
+WIth Nest-Combo you will be able to speed you development process with single line commands.
 
 ---
 
