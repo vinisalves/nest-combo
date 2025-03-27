@@ -1,0 +1,20 @@
+nest-combo:
+  project-name: my-new-project
+  dependencies:
+    - name: "@nestjs/config"    
+
+  modules:
+    - name: core
+      components:
+          - module
+      modules:
+        - name: users
+          components:
+            - module
+            - controller
+            - service
+        - name: auth
+          components: 
+            - module
+            - controller
+            - service
