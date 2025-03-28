@@ -211,12 +211,7 @@ nest-combo auth -m -s --ns
 ```bash
 nest-combo products -m -c --dr
 ```
-
 ---
-
-## Demo
-<video src="https://vinisalves.github.io/nest-combo/demo.mp4" />
-
 
 ## Contributing
 
