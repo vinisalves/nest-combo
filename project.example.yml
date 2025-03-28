@@ -4,11 +4,11 @@ nest-combo:
   open-vscode: true # open vscode when process is finished
   package-manager: npm # npm | yarn | pnmp
   dependencies:
-    - name: "@nestjs/config"    
-    - name: "@nestjs/bull"
-    - name: "class-transformer"
-    - name: "class-validator"
-    - name: "nestjs-twilio"
+    - "@nestjs/config"    
+    - "@nestjs/bull"
+    - "class-transformer"
+    - "class-validator"
+    - "nestjs-twilio"
   modules:
     - name: core
       resources:

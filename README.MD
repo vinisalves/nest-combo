@@ -19,20 +19,57 @@ A CLI tool to generate NestJS modules, controllers, services, and other componen
 
 ---
 
-## How it works
+## How It Works
 
-How Nest-Combo Works with NestJS CLI
+### How Nest-Combo Works with NestJS CLI
 
-If you have the NestJS CLI installed globally , nest-combo will automatically detect and use it to execute commands. This ensures compatibility with your existing global setup.
+If you have the **NestJS CLI** installed globally, **nest-combo** will automatically detect and use it to execute commands. This ensures compatibility with your existing global setup.
 
-If the NestJS CLI is not installed globally, don't worry! nest-combo comes bundled with its own local version of the NestJS CLI. It will seamlessly fall back to this cached version to ensure smooth operation without requiring any additional setup from you.
-WIth Nest-Combo you will be able to speed you development process with single line commands.
+If the NestJS CLI is not installed globally, don't worry! **nest-combo** comes bundled with its own local version of the NestJS CLI. It will seamlessly fall back to this cached version to ensure smooth operation without requiring any additional setup from you.
+
+---
+
+### Key Features of Nest-Combo
+
+#### 1. **Importing a YAML File for Project Scaffolding**
+
+With **nest-combo**, you can define an entire project structure in a `project.yml` file and let **nest-combo** handle the scaffolding process for you. Simply specify your modules, resources, dependencies, and optional flags in the YAML file, and **nest-combo** will generate the entire project automatically.
+
+This feature encourages thoughtful planning and allows you to automate repetitive tasks, saving you time and effort. Additionally, **nest-combo** supports **recursive logic** for creating nested modules, ensuring that even complex project structures are generated accurately.
+
+For example, you can define deeply nested modules like this:
+
+```yaml
+modules:
+  - name: core
+    resources:
+      - module
+    modules:
+      - name: user
+        resources:
+          - module
+          - controller
+          - service
+        options:
+          - --no-spec
+        modules:
+          - name: subUsers
+            resources:
+              - module
+              - controller
+              - service
+            options:
+              - --no-spec
+```
+
+This recursive approach ensures that all parent and child modules are created with proper imports and dependencies.
 
 ---
 
 ## Features
 
-- Generate NestJS modules, controllers, services, gateways, middleware, and interceptors with single line command.
+- Load a full project from a YAML file.
+- Generate NestJS modules, controllers, services, gateways, middleware, and interceptors with a single-line command.
 - Support for optional flags like `--no-spec` and `--dry-run`.
 - Colorful and user-friendly output using `chalk`.
 - Easy-to-use command-line interface.
@@ -63,12 +100,18 @@ Run the CLI tool with the desired module name and options:
 nest-combo <module-name> [options]
 ```
 
-### Example:
+### Example Commands
 
-To create a module, controller and a service in a single line command:
+#### Create a Module, Controller, and Service in a Single Line
 
 ```bash
 nest-combo users -m -c -s
+```
+
+#### Create a Full Project from a YAML File
+
+```bash
+nest-combo -f project.yml
 ```
 
 ---
@@ -85,10 +128,71 @@ nest-combo users -m -c -s
 | `-itc, --interceptor` | Generate an interceptor                                        |
 | `-ns, --no-spec`      | Do not generate `.spec.ts` test files                          |
 | `-dr, --dry-run`      | Report actions that would be taken without writing out results |
+| `-f, --file`          | Create a project from a YAML file                              |
+
+---
+
+### YAML Example for Loading a Full Project from Scratch
+
+```yaml
+# YML example for loading a full project from scratch
+nest-combo:
+  project-name: my-new-project
+  open-vscode: true # Open VSCode when the process is finished
+  package-manager: npm # npm | yarn | pnpm
+  dependencies:
+    - "@nestjs/config"
+    - "@nestjs/bull"
+    - "class-transformer"
+    - "class-validator"
+    - "nestjs-twilio"
+  modules:
+    - name: core
+      resources:
+        - module
+      modules:
+        - name: user
+          resources:
+            - module
+            - controller
+            - service
+          options:
+            - --no-spec
+          modules:
+            - name: subUsers
+              resources:
+                - module
+                - controller
+                - service
+              options:
+                - --no-spec
+        - name: auth
+          resources:
+            - module
+            - controller
+            - service
+            - interceptor
+    - name: product
+      resources:
+        - module
+        - controller
+        - service
+    - name: payment
+      resources:
+        - module
+        - controller
+        - service
+```
 
 ---
 
 ## Examples
+
+### Create a Full Project from a YAML File
+
+```bash
+nest-combo -f project.yml
+```
 
 ### Generate a Module, Controller, and Service
 
@@ -99,16 +203,23 @@ nest-combo users -m -c -s
 ### Generate a Module and Service Without Spec Files
 
 ```bash
-nest-combo auth -m -s --no-spec
+nest-combo auth -m -s --ns
 ```
 
 ### Dry Run: Check What Would Be Generated
 
 ```bash
-nest-combo products -m -c --dry-run
+nest-combo products -m -c --dr
 ```
 
 ---
+
+## Demo
+
+<video width="640" height="360" controls>
+  <source src="./demo.mp4" type="video/mp4">
+  Your browser ddemo not support the video tag.
+</video>
 
 ## Contributing
 

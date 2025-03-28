@@ -124,8 +124,6 @@ function getArgs() {
   const hasNoSpec = args.includes("-ns") || args.includes("--no-spec");
   const hasDryRun = args.includes("-dr") || args.includes("--dry-run");
   const hasYmlFile = args.includes("-f") || args.includes("--file");
-  const validateYmlFile =
-    args.includes("-vf") || args.includes("--validate-yml");
 
   return {
     moduleName,
@@ -149,8 +147,7 @@ ${chalk.yellow("Options:")}
   ${chalk.cyan("-g,   --gateway")}        Generate a Gateway
   ${chalk.cyan("-mw,  --middleware")}     Generate Middleware
   ${chalk.cyan("-itc, --interceptor")}    Generate an Interceptor
-  ${chalk.cyan("-f,   --file")}           Generate project from yml file
-  ${chalk.cyan("-vf,   --validate-yml")}  Validate Yml File
+  ${chalk.cyan("-f,   --file")}           Generate project from yml file  
 
 ${chalk.bgMagenta("Optional:")}
   ${chalk.cyan("-ns, --no-spec")}     Do not generate spec (test) files
@@ -212,7 +209,7 @@ function loadFromYml(file) {
     generateProject(projectName, [`-p ${packageManager}`]);
 
     if (dependencies.length > 0) {
-      console.log(chalk.blue("Installing dependencies..."));
+      console.log(chalk.cyan("Installing dependencies..."));
       installDependencies(projectName, dependencies);
     } else {
       console.log(chalk.yellow("No dependencies to install."));
