@@ -215,12 +215,8 @@ nest-combo products -m -c --dr
 ---
 
 ## Demo
+<video src="https://vinisalves.github.io/nest-combo/demo.mp4" />
 
-<<<<<<< HEAD
-<video src="https://github.com/vinisalves/nest-combo/blob/master/demo.mp4" width="300" />
-=======
-https://github.com/vinisalves/nest-combo/blob/master/demo.mp4
->>>>>>> bc4129be2873528f3bcac016026970b0f81e9f8c
 
 ## Contributing
 
