@@ -2,7 +2,7 @@
   "name": "nest-combo",
   "version": "1.2.0",
   "main": "lib/generate.js",
-  "description": "A CLI tool to generate NestJS modules, controllers, and services, etc with single line commands.",
+  "description": "nest-combo is a CLI tool designed to supercharge your NestJS development workflow. Define your entire project structure in a yml file and generate modules, controllers, services, and more with a single command.",
   "type": "module",
   "bin": {
     "nest-combo": "bin/cli.js"
@@ -15,6 +15,7 @@
   },
   "keywords": [
     "nestjs",
+    "nestjs-cli",
     "cli",
     "generator",
     "module",
