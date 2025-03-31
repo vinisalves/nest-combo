@@ -3,10 +3,10 @@ name: CI/CD Pipeline for nest-combo
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-test:
@@ -37,7 +37,7 @@ jobs:
   publish-to-npm:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout code
