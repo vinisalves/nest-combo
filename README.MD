@@ -1,6 +1,6 @@
 # NestJS Combo CLI
 
-![npm](https://img.shields.io/npm/v/nest-combo) ![npm](https://img.shields.io/npm/dt/nest-combo)
+![npm](https://img.shields.io/npm/v/nest-combo) ![npm](https://img.shields.io/npm/dt/nest-combo) [![CI](https://github.com/vinisalves/nest-combo/actions/workflows/ci.yml/badge.svg)](https://github.com/vinisalves/nest-combo/actions/workflows/ci.yml)
 
 A CLI tool to generate NestJS Projects, modules, controllers, services, and other components in a single line command.
 
