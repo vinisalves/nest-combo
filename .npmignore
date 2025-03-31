@@ -1,0 +1,51 @@
+# Ignore development-specific files
+node_modules/
+*.log
+*.lock
+.env
+.env.*
+.DS_Store
+
+# Ignore test files
+test/
+tests/
+__tests__/
+coverage/
+
+# Ignore build artifacts (if not needed in the package)
+dist/
+build/
+
+# Ignore documentation files (if not needed in the package)
+docs/
+README.md
+CHANGELOG.md
+
+# Ignore configuration files
+.eslintrc.json
+.prettierrc
+.editorconfig
+babel.config.js
+jest.config.js
+eslint.config.js
+
+# Ignore source files if you're publishing only compiled files
+src/
+# Ignore CI/CD configuration files
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore sensitive files
+credentials.json
+private.key
+
+# Ignore npm-related files
+.npmrc
+.yarn-integrity
+
+test-project/

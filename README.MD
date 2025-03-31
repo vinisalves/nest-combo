@@ -2,7 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/nest-combo) ![npm](https://img.shields.io/npm/dt/nest-combo)
 
-A CLI tool to generate NestJS modules, controllers, services, and other components in a single line command.
+A CLI tool to generate NestJS Projects, modules, controllers, services, and other components in a single line command.
 
 ---
 
@@ -29,46 +29,10 @@ If the NestJS CLI is not installed globally, don't worry! **nest-combo** comes b
 
 ---
 
-### Key Features of Nest-Combo
-
-#### 1. **Importing a YAML File for Project Scaffolding**
-
-With **nest-combo**, you can define an entire project structure in a `project.yml` file and let **nest-combo** handle the scaffolding process for you. Simply specify your modules, resources, dependencies, and optional flags in the YAML file, and **nest-combo** will generate the entire project automatically.
-
-This feature encourages thoughtful planning and allows you to automate repetitive tasks, saving you time and effort. Additionally, **nest-combo** supports **recursive logic** for creating nested modules, ensuring that even complex project structures are generated accurately.
-
-For example, you can define deeply nested modules like this:
-
-```yaml
-modules:
-  - name: core
-    resources:
-      - module
-    modules:
-      - name: user
-        resources:
-          - module
-          - controller
-          - service
-        options:
-          - --no-spec
-        modules:
-          - name: subUsers
-            resources:
-              - module
-              - controller
-              - service
-            options:
-              - --no-spec
-```
-
-This recursive approach ensures that all parent and child modules are created with proper imports and dependencies.
-
----
-
 ## Features
 
 - Load a full project from a YAML file.
+- Create a new project and automatically open VsCode
 - Generate NestJS modules, controllers, services, gateways, middleware, and interceptors with a single-line command.
 - Support for optional flags like `--no-spec` and `--dry-run`.
 - Colorful and user-friendly output using `chalk`.
@@ -97,15 +61,21 @@ nest-combo --version
 Run the CLI tool with the desired module name and options:
 
 ```bash
-nest-combo <module-name> [options]
+nest-combo <<project|module>-name> [options]
 ```
 
 ### Example Commands
 
-#### Create a Module, Controller, and Service in a Single Line
+#### Create a project
 
 ```bash
-nest-combo users -m -c -s
+nest-combo my-amazing-project -new # "VSCode will open by default once it's done. If you don't want it just add -no-vscode"
+```
+
+#### Create a Module, Controller, Service, Intercepetor, Gateway and Middleware in a Single Line Command
+
+```bash
+nest-combo users -m -c -s -itc -g -mw # if you don't want spcec files, just add -ns or --no-spec
 ```
 
 #### Create a Full Project from a YAML File
@@ -141,11 +111,11 @@ nest-combo:
   open-vscode: true # Open VSCode when the process is finished
   package-manager: npm # npm | yarn | pnpm
   dependencies:
-    - "@nestjs/config"
-    - "@nestjs/bull"
-    - "class-transformer"
-    - "class-validator"
-    - "nestjs-twilio"
+    - '@nestjs/config'
+    - '@nestjs/bull'
+    - 'class-transformer'
+    - 'class-validator'
+    - 'nestjs-twilio'
   modules:
     - name: core
       resources:
@@ -182,34 +152,6 @@ nest-combo:
         - module
         - controller
         - service
-```
-
----
-
-## Examples
-
-### Create a Full Project from a YAML File
-
-```bash
-nest-combo -f project.yml
-```
-
-### Generate a Module, Controller, and Service
-
-```bash
-nest-combo users -m -c -s
-```
-
-### Generate a Module and Service Without Spec Files
-
-```bash
-nest-combo auth -m -s --ns
-```
-
-### Dry Run: Check What Would Be Generated
-
-```bash
-nest-combo products -m -c --dr
 ```
 
 ---
