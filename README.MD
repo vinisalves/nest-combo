@@ -8,6 +8,7 @@ A CLI tool to generate NestJS Projects, modules, controllers, services, and othe
 
 ## Table of Contents
 
+- [Motivation](#motivation)
 - [How it works](#how-it-works)
 - [Features](#features)
 - [Installation](#installation)
@@ -16,6 +17,12 @@ A CLI tool to generate NestJS Projects, modules, controllers, services, and othe
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
+
+---
+
+## Motivation
+
+The motivation is [here](https://medium.com/javascript-in-plain-english/speed-up-your-nestjs-development-workflow-with-nest-combo-cli-e5dcc2da46e6).
 
 ---
 
