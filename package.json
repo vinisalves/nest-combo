@@ -1,6 +1,6 @@
 {
   "name": "nest-combo",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "main": "lib/generate.js",
   "description": "nest-combo is a CLI tool designed to supercharge your NestJS development workflow. Define your entire project structure in a yml file and generate modules, controllers, services, and more with a single command.",
   "type": "module",
@@ -13,7 +13,7 @@
   "scripts": {
     "lint": "eslint . --ext .js",
     "format": "prettier --write .",
-    "test": "jest --maxWorkers=20%",
+    "test": "jest -- test/e2e.cli.spec.js --maxWorkers=20%",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
