@@ -106,6 +106,8 @@ nest-combo -f project.yml
 | `-ns, --no-spec`      | Do not generate `.spec.ts` test files                          |
 | `-dr, --dry-run`      | Report actions that would be taken without writing out results |
 | `-f, --file`          | Create a project from a YAML file                              |
+| -l, --library         | Create NestJs Library                                          |
+| -a, --api             | Create Module, Controller and Service in a single shot         |
 
 ---
 
